@@ -1,4 +1,4 @@
-const hash = require('object-hash')
+const crypto = require('crypto')
 
 /**
  * A class similar to Set(), but one that works on
@@ -24,6 +24,17 @@ class ObjectSet {
   }
 
   /**
+   * Create a hash from an object
+   * @private
+   * @param {Object} obj
+   * @returns {string}
+   */
+  hash (obj) {
+    const hash = crypto.createHash('sha1')
+    return hash.update(JSON.stringify(obj)).digest('hex')
+  }
+
+  /**
    * Returns the number of values in the ObjectSet.
    * @member {number}
    */
@@ -38,7 +49,7 @@ class ObjectSet {
    * @returns {ObjectSet}
    */
   add (obj) {
-    const key = hash(obj)
+    const key = this.hash(obj)
     this.data[key] = obj
     this.set.add(key)
     return this
@@ -60,7 +71,7 @@ class ObjectSet {
    * @returns {boolean}
    */
   delete (obj) {
-    const key = hash(obj)
+    const key = this.hash(obj)
     delete this.data[key]
     return this.set.delete(key)
   }
@@ -108,7 +119,7 @@ class ObjectSet {
    * or not.
    */
   has (obj) {
-    return this.set.has(hash(obj))
+    return this.set.has(this.hash(obj))
   }
 
   /**

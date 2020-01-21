@@ -34,9 +34,7 @@
     "sinon": "^8.1.0",
     "standard": "^14.3.1"
   },
-  "dependencies": {
-    "object-hash": "^2.0.1"
-  },
+  "dependencies": {},
   "standard": {
     "ignore": [
       "/doc"
