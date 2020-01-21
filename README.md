@@ -10,7 +10,7 @@ If you want to read full documentation, run `npm run doc`.
 ## Examples
 
 ```
-const ObjectSet = require('object-set')
+const ObjectSet = require('ab-object-set')
 
 const obj1 = {a: 1, b: 1}
 const obj2 = {a: 2, b: 2}

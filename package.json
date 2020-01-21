@@ -1,5 +1,5 @@
 {
-  "name": "object-set",
+  "name": "ab-object-set",
   "version": "1.0.0",
   "description": "Set, but for Objects.  Uses object hashes to check equality.",
   "main": "object-set.js",
