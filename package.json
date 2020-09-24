@@ -1,11 +1,11 @@
 {
   "name": "ab-object-set",
   "version": "1.0.1",
-  "description": "Set, but for Objects.  Uses object hashes to check equality.",
+  "description": "Set, but for Objects.",
   "main": "object-set.js",
   "scripts": {
     "test": "mocha",
-    "preversion": "mocha",
+    "preversion": "npm run test",
     "postversion": "git push && git push --tags",
     "pretest": "standard",
     "jsdoc": "jsdoc object-set.js -R README.md -d doc",
@@ -14,7 +14,10 @@
   "keywords": [
     "javascript",
     "Object",
-    "Set"
+    "Set",
+    "intersection",
+    "union",
+    "difference"
   ],
   "author": "Andrew Bythell <abythell@ieee.org>",
   "license": "ISC",
@@ -34,7 +37,9 @@
     "sinon": "^9.0.3",
     "standard": "^14.3.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "object-hash": "^2.0.3"
+  },
   "standard": {
     "ignore": [
       "/doc"

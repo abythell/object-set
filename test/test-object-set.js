@@ -30,6 +30,12 @@ describe('ObjectSet', () => {
       expect(Array(...set)).to.eql([obj1, obj2])
     })
   })
+  describe('ObjectSet#hash', () => {
+    it('hashes the same regardless of property order', () => {
+      const obj3 = { b: 2, a: 1 }
+      expect(set.hash(obj1)).to.equal(set.hash(obj3))
+    })
+  })
   describe('ObjectSet#add', () => {
     it('adds a new object to the set', () => {
       const obj3 = { x: 10, y: 20 }

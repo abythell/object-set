@@ -1,4 +1,4 @@
-const crypto = require('crypto')
+const hash = require('object-hash')
 
 /**
  * A class similar to Set(), but one that works on
@@ -30,8 +30,9 @@ class ObjectSet {
    * @returns {string}
    */
   hash (obj) {
-    const hash = crypto.createHash('sha1')
-    return hash.update(JSON.stringify(obj)).digest('hex')
+    // const hash = crypto.createHash('sha1')
+    // return hash.update(JSON.stringify(obj)).digest('hex')
+    return hash(obj)
   }
 
   /**
