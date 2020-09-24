@@ -1,6 +1,6 @@
 {
   "name": "ab-object-set",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Set, but for Objects.",
   "main": "object-set.js",
   "scripts": {
